@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TasteBites Restaurant</title>
+    <style>
+        /* Reset defaults */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Georgia", serif;
+            color: #333;
+        }
+
+        /* Header / Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent navbar */
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-family: "Brush Script MT", cursive;
+            font-weight: bold;
+            color: #FFD700; /* Golden for luxury feel */
+        }
+        nav .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        nav .nav-links li {
+            position: relative;
+        }
+        nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            display: block;
+        }
+        nav .nav-links a:hover {
+            background-color: #A52A2A;
+            border-radius: 5px;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            top: 100%;
+            left: 0;
+            min-width: 150px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+        .dropdown-menu li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Hero Section with Pinterest Background */
+        .hero {
+            background: url('https://i.pinimg.com/736x/f8/a7/01/f8a70144eb881afe78df0164e657e966.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-family: "Brush Script MT", cursive;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            background-color: #FFD700;
+            color: #8B0000;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .cta-button:hover {
+            background-color: #e6c200;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #fff8dc;
+        }
+        .features h2 {
+            color: #8B0000;
+            font-family: "Brush Script MT", cursive;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+        .feature-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .feature h3 {
+            color: #8B0000;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #8B0000;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+        .footer-links a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav .nav-links {
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.9);
+                display: none;
+            }
+            nav.active .nav-links {
+                display: flex;
+            }
+            .feature-list {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">TasteBites</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Menu ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Breakfast</a></li>
+                        <li><a href="#">Lunch</a></li>
+                        <li><a href="#">Dinner</a></li>
+                        <li><a href="#">Desserts</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">About ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Chef</a></li>
+                        <li><a href="#">Gallery</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to TasteBites</h1>
+            <p>Experience fine dining with exquisite flavors and cozy ambiance.</p>
+            <a href="#" class="cta-button">Reserve a Table</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Why Dine With Us?</h2>
+        <div class="feature-list">
+            <div class="feature">
+                <h3>Fresh Ingredients</h3>
+                <p>Locally sourced, organic produce for the finest taste.</p>
+            </div>
+            <div class="feature">
+                <h3>Elegant Ambiance</h3>
+                <p>A perfect place for family dinners and romantic evenings.</p>
+            </div>
+            <div class="feature">
+                <h3>World-Class Chefs</h3>
+                <p>Our talented chefs create dishes that excite your taste buds.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 TasteBites Restaurant. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+</body>
+</html>
